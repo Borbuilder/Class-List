@@ -20,13 +20,13 @@ public:
 	TList();
 	~TList() { DelList(); };
 	TList(const TList<T>& list_object);
-	void InsFirst(const T& _value);
-	void InsLast(const T& _value);
-	void DelFirst();
+	virtual void InsFirst(const T& _value);
+	virtual void InsLast(const T& _value);
+	virtual void DelFirst();
 	//void DelLast();
-	void InsCurrent(const T& _value);
-	void DelCurrent();
-	void DelList();
+	virtual void InsCurrent(const T& _value);
+	virtual void DelCurrent();
+	virtual void DelList();
 	void SetPos(const int& _pos);
 	T GetCurrent() { return pCur->value; };
 	
@@ -43,6 +43,7 @@ public:
 	TList<T>& operator=(const TList<T>& queue_object);
 	void output();
 };
+
 
 template<class T>
 inline TList<T>::TList()
@@ -105,7 +106,7 @@ inline void TList<T>::InsLast(const T& _value)
 }
 
 template<class T>
-inline void TList<T>::InsCurrent(const T& _value)
+inline  void TList<T>::InsCurrent(const T& _value) 
 {
 	if (pCur == pFirst)
 	{
@@ -172,12 +173,10 @@ inline void TList<T>::DelCurrent()
 			if (pCur == pLast)
 			{
 				tmp = pCur;
-				pCur = pFirst;
+				pCur = pCur->pNext;
 				pLast = pPrev;
-				//pLast->pNext = pStop;
-				pPrev = pStop;
+				pPrev->pNext = pCur;
 				delete tmp;
-				pos = 0;
 			}
 			else
 		    {
