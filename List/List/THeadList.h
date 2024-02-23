@@ -23,30 +23,18 @@ public:
 		delete pHead;
 	}
 
-	void InsFirst(const T& _value);
-	void InsLast(const T& _value) { TList<T>::InsLast(const T & _value); }
-	void DelFirst(const T& _value);
-
+	void InsLast(const T& _value) { TList<T>::InsLast(_value); }
+	void InsFirst(const T& _value)override
+	{
+		TList<T>::InsFirst(_value);
+		pHead->pNext = pFirst;
+	}
+	void DelFirst()override
+	{
+		TList<T>::DelFirst();
+		pHead->pNext = pFirst;
+	}
 };
 
-template<class T>
-inline void THeadList<T>::InsFirst(const T& _value)
-{
-	TList<T>::InsFirst(const T& _value);
-	pHead->pNext = pFirst;
-}
 
-template<class T>
-inline void THeadList<T>::DelFirst(const T& _value)
-{
-	TList<T>::DelFirst(const T & _value);
-	/*
-	TNode<T>* tmp = new TNode<T>;
-	tmp->value = _value;
-	tmp->pNext = pStop;
-	pLast->pNext = tmp;
-	pLast = tmp;
-	*/
-	pHead->pNext = pFirst;
-}
 
