@@ -1,5 +1,11 @@
 #include "../List/List/TList.h"
 #include "gtest.h"
+#include "../List/List/THeadList.h"
+
+TEST(THeadList, can_create_list)
+{
+    ASSERT_NO_THROW(THeadList<int> Hlist);
+}
 
 TEST(TList, can_create_list)
 {
