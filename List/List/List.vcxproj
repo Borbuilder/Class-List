@@ -128,11 +128,10 @@
   <ItemGroup>
     <ClInclude Include="THeadList.h" />
     <ClInclude Include="TList.h" />
+    <ClInclude Include="Monom.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FileForTest.cpp" />
-    <ClCompile Include="THeadList.cpp" />
-    <ClCompile Include="TList.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

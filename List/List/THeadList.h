@@ -23,12 +23,15 @@ public:
 		delete pHead;
 	}
 
+
 	void InsLast(const T& _value) { TList<T>::InsLast(_value); }
+
 	void InsFirst(const T& _value)override
 	{
 		TList<T>::InsFirst(_value);
 		pHead->pNext = pFirst;
 	}
+
 	void DelFirst()override
 	{
 		TList<T>::DelFirst();
