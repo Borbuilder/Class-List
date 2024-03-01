@@ -89,5 +89,5 @@ void TPolinom::createMomomVector(const std::string& in_str)
 
 void TPolinom::createPolinom()
 {
-
+    
 }
