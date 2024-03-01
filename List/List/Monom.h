@@ -3,9 +3,9 @@
 
 class Monom
 {
-private:
+protected:
 
-	double coef;
+	int coef;
 	int index;
 
 public:
@@ -67,6 +67,11 @@ public:
 	bool operator>(const Monom& other)
 	{
 		return !(*this < other);
+	}
+
+	void outputMonomFields()
+	{
+		std::cout << "(" << coef << "," << index << ")";
 	}
 
 	friend std::istream& operator>>(std::istream& cin, Monom& monom) 

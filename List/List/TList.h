@@ -26,7 +26,6 @@ public:
 	virtual void InsFirst(const T& _value);
 	virtual void InsLast(const T& _value);
 	virtual void DelFirst();
-	//void DelLast();
 	virtual void InsCurrent(const T& _value);
 	virtual void DelCurrent();
 	virtual void DelList();
@@ -44,7 +43,7 @@ public:
 	T Front(); 
 	T Back();
 	
-	TList<T>& operator=(const TList<T>& queue_object);
+	TList<T>& operator=(const TList<T>& object);
 	void output();
 };
 
