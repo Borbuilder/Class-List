@@ -121,7 +121,7 @@ TEST(TList, can_insert_in_middle_by_InsCurrent)
     list.InsLast(3);
     list.SetPos(1);
     ASSERT_NO_THROW(list.InsCurrent(5));
-    EXPECT_EQ(2, list.GetCurrent());
+    EXPECT_EQ(2, list.GetCurrentValue());
 }
 
 TEST(TList, can_insert_in_the_end_by_InsCurr)
@@ -132,7 +132,7 @@ TEST(TList, can_insert_in_the_end_by_InsCurr)
     list.InsLast(3);
     list.SetPos(2);
     ASSERT_NO_THROW(list.InsCurrent(4));
-    EXPECT_EQ(3, list.GetCurrent());
+    EXPECT_EQ(3, list.GetCurrentValue());
 }
 
 TEST(TList, can_delete_first_by_DelCurr)
@@ -142,7 +142,7 @@ TEST(TList, can_delete_first_by_DelCurr)
     list.InsLast(2);
     list.SetPos(0);
     ASSERT_NO_THROW(list.DelCurrent());
-    EXPECT_EQ(2, list.GetCurrent());
+    EXPECT_EQ(2, list.GetCurrentValue());
 }
 
 TEST(TList, can_delete_from_the_middle_by_DelCurr)
@@ -153,7 +153,7 @@ TEST(TList, can_delete_from_the_middle_by_DelCurr)
     list.InsLast(3);
     list.SetPos(1);
     ASSERT_NO_THROW(list.DelCurrent());
-    EXPECT_EQ(3, list.GetCurrent());
+    EXPECT_EQ(3, list.GetCurrentValue());
 }
 
 TEST(TList, can_delete_last_by_DelCurr)

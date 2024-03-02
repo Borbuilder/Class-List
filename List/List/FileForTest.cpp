@@ -9,6 +9,7 @@ int main()
     std::string str = "x^2y^2z^2+2x^3y^3z^3";
     p.createMomomVector(str);
     p.vectorOutput();
+    p.output();
     
     /* 
     int rows = 2;

@@ -30,7 +30,7 @@ public:
 	virtual void DelCurrent();
 	virtual void DelList();
 	void SetPos(const int& _pos);
-	T GetCurrent() { return pCur->value; };
+	T GetCurrentValue() { return pCur->value; };
 	T GetLenght() { return len; }
 	TNode<T>* GetpCur() { return pCur; }
 	T GetPos() { return pos; }
@@ -336,7 +336,7 @@ inline void TList<T>::output()
 		std::cout << "( ";
 		for (Reset();!IsEnd();GoNext())
 		{
-			std::cout << GetCurrent() << " ";
+			std::cout << GetCurrentValue() << " ";
 		}
 		std::cout << ")" << std::endl;
 	}

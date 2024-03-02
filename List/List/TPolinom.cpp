@@ -11,7 +11,7 @@ void TPolinom::createMomomVector(const std::string& in_str)
 
     for (int i = 0; i < str.length(); i++)
     {
-        if (check.find(str[i]) != std::string::npos)                            //Проверяем, правильный ли поступил элемент
+        if (check.find(str[i]) != std::string::npos)                               //Проверяем, правильный ли поступил элемент
         {
 
             if (str[i] == '+' || str[i] == '-')                                    //Создаём моном
@@ -74,9 +74,13 @@ void TPolinom::createMomomVector(const std::string& in_str)
                     }
                 }
 
+                /// <для тестов>
                 Monom current_monom;
                 current_monom.createMonom(coef, x_deg, y_deg, z_deg);
                 arr_monom.push_back(current_monom);
+                /// </для тестов>
+               
+                this->addMonom(current_monom);
             }
 
         }
@@ -90,4 +94,25 @@ void TPolinom::createMomomVector(const std::string& in_str)
 void TPolinom::createPolinom()
 {
     
+}
+
+void TPolinom::addMonom(Monom& _monom)
+{
+    if (this->empty())
+    {
+        this->InsFirst(_monom);
+    }
+    else {
+        Reset();
+        while (!IsEnd())
+        {
+            if ( (_monom < this->GetCurrentValue()) || this->pCur==this->pLast)
+            {
+                this->InsCurrent(_monom);
+            }
+            else {
+                GoNext();
+            }
+        }
+    }
 }

@@ -20,6 +20,8 @@ public:
 
 	void createPolinom();
 
+	void addMonom( Monom& _monom);
+
 	void vectorOutput()
 	{   
 		std::cout << "( ";
