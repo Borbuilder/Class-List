@@ -1,17 +1,25 @@
 #include<iostream>
 #include "TList.h"
+#include "THeadList.h"
 #include "TPolinom.h"
 #include<vector>
 
 int main()
-{   
+{  
+    TList<int> l;
+    l.InsFirst(1);
+    l.output();
+    THeadList<int> h;
+    h.InsFirst(1);
+    h.output();
+    /* 
     TPolinom p;
     std::string str = "x^2y^2z^2+2x^3y^3z^3";
     p.createMomomVector(str);
     p.vectorOutput();
     p.output();
     
-    /* 
+    
     int rows = 2;
     int cols = 2;
     std::vector<int> v;

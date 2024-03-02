@@ -52,11 +52,11 @@ template<class T>
 inline TList<T>::TList()
 {
 	pStop = nullptr;
-	pFirst = pStop;
-	pLast = pStop;
+	pFirst = nullptr;
+	pLast = nullptr;
 	//pLast->pNext = pStop;
-	pCur = pStop;
-	pPrev = pStop;
+	pCur = nullptr;
+	pPrev = nullptr;
 	//pPrev->pNext = pCur;
 	len = 0;
 	pos = -1;
@@ -68,11 +68,11 @@ inline TList<T>::TList(const TList<T>& object)
 	TNode<T>* tmp = object.pFirst;
 	TNode<T>* current;
 
-	while (tmp != nullptr)
+	while (tmp != pStop)
 	{
 		current = new TNode<T>;
 		current->value = tmp->value;
-		if (pFirst == nullptr)
+		if (pFirst == pStop)
 		{
 			pFirst = current;
 			pLast = current;
@@ -83,29 +83,33 @@ inline TList<T>::TList(const TList<T>& object)
 			pLast = current;
 		}
 		tmp = tmp->pNext;
-		len++;
 	}
-	pCur = pFirst;
+	//pCur = pFirst;
 	pos = 0;
-	pPrev = pStop;
+	len = object.len;
+	//pPrev = pStop;
 }
 
 template<class T>
 inline void TList<T>::InsFirst(const T& _value)
 {
-	TNode<T>* tmp = new TNode<T>;
-	tmp->value = _value;
-	tmp->pNext = pFirst;
-	pFirst = tmp;
-	if (len == 0)
+	if (pFirst == pStop)
 	{
+		TNode<T>* tmp = new TNode<T>;
+		tmp->value = _value;
+		tmp->pNext = pFirst;
+		pFirst = tmp;
 		pLast = tmp;
+		len++;
 	}
-	if (SetPos_key == 0)
+	else
 	{
-		pCur = pFirst;
+		TNode<T>* tmp = new TNode<T>;
+		tmp->value = _value;
+		tmp->pNext = pFirst;
+		pFirst = tmp;
+		len++;
 	}
-	len++;
 }
 
 template<class T>
@@ -225,7 +229,7 @@ inline void TList<T>::DelList()
 template<class T>
 inline bool TList<T>::empty()
 {
-	return (pFirst == nullptr);
+	return (pFirst == pStop);
 }
 
 template<class T>
@@ -301,7 +305,7 @@ inline TList<T>& TList<T>::operator=(const TList<T>& object)
 	}
 	else
 	{
-		//ClearQueue();
+		DelList();
 		TNode<T>* tmp = object.pFirst, * current;
 		while (tmp != pStop)
 		{
