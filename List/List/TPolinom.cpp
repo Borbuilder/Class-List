@@ -6,7 +6,14 @@ void TPolinom::createMomomVector(const std::string& in_str)
 {
     std::vector<Monom> cur_vector;
     std::string check = "1234567890xyz+-^";
-    std::string str = "+" + in_str;
+    std::string str;
+    if (in_str[0] != '-')
+    {
+        str = "+" + in_str;
+    }
+    else {
+        str = in_str;
+    }
     int coef,x_deg,y_deg,z_deg;
 
     for (int i = 0; i < str.length(); i++)
@@ -21,7 +28,7 @@ void TPolinom::createMomomVector(const std::string& in_str)
                 std::string current_str;
                 current_str = str.substr(i + 1, stop_position - 1);
 
-                if ((current_str[i] >= '0') && (current_str[i] <= '9'))
+                if ((current_str[0] >= '0') && (current_str[0] <= '9'))
                 {
                     if (str[i] == '+') { coef = current_str[0]; }
                     else{ coef = (-1)*(static_cast<int>(current_str[0]) - '0'); }
@@ -104,15 +111,22 @@ void TPolinom::addMonom(Monom& _monom)
     }
     else {
         Reset();
-        while (!IsEnd())
+        while (_monom.getIndex()<pCur->value.getIndex())
         {
-            if ( (_monom < this->GetCurrentValue()) || this->pCur==this->pLast)
+            GoNext();
+        }
+        if (pCur->value == _monom)
+        {
+            if (_monom.getCoef() + pCur->value.getCoef() == 0)
             {
-                this->InsCurrent(_monom);
+                DelCurrent();
             }
             else {
-                GoNext();
+                pCur->value.setCoef(pCur->value.getCoef() + _monom.getCoef());
             }
+        }
+        else {
+            InsCurrent(_monom);
         }
     }
 }

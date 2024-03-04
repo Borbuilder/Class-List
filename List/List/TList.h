@@ -72,7 +72,7 @@ inline TList<T>::TList(const TList<T>& object)
 	{
 		current = new TNode<T>;
 		current->value = tmp->value;
-		if (pFirst == nullptr)
+		if (pFirst == pStop)
 		{
 			pFirst = current;
 			pLast = current;
@@ -225,7 +225,7 @@ inline void TList<T>::DelList()
 template<class T>
 inline bool TList<T>::empty()
 {
-	return (pFirst == nullptr);
+	return (pFirst == pStop);
 }
 
 template<class T>
@@ -301,7 +301,7 @@ inline TList<T>& TList<T>::operator=(const TList<T>& object)
 	}
 	else
 	{
-		//ClearQueue();
+		DelList();
 		TNode<T>* tmp = object.pFirst, * current;
 		while (tmp != pStop)
 		{

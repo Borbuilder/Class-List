@@ -1,5 +1,6 @@
 #pragma once
 #include<iostream>
+#include<cmath>
 
 class Monom
 {
@@ -37,7 +38,7 @@ public:
 
 	bool operator==(const Monom& other)
 	{
-		return (coef == other.coef && index == other.index);
+		return (std::abs(coef) == std::abs(other.coef) && index == other.index);
 	}
 
 	bool operator!=(const Monom& other)
@@ -74,6 +75,14 @@ public:
 		std::cout << "(" << coef << "," << index << ")";
 	}
 
+	int getIndex() { return index; }
+
+	void setIndex(const int& _index) { index = _index; }
+
+	int getCoef() { return coef; }
+
+	void setCoef(const int& _coef) { coef = _coef; }
+
 	friend std::istream& operator>>(std::istream& cin, Monom& monom) 
 	{
 		std::cout << "Ввод монома:" << std::endl << "Введите коэффициент:" << std::endl;
@@ -83,11 +92,9 @@ public:
 		return cin;
 	}
 
-	friend std::ostream& operator<<(std::ostream& cout, const Monom& monom) {
-		int x_deg = monom.index / 100;
-		int y_deg = monom.index / 10;
-		int z_deg = monom.index % 10;
-		cout << monom.coef << "*X^(" << x_deg << ")Y^(" << y_deg << ")Z^(" << z_deg << ")" << std::endl;
+	friend std::ostream& operator<<(std::ostream& cout, const Monom& monom) 
+	{
+		cout << "(" << monom.coef << "," << monom.index << ")";
 		return cout;
 	}
 };

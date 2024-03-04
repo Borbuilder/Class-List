@@ -6,7 +6,7 @@
 int main()
 {   
     TPolinom p;
-    std::string str = "x^2y^2z^2+2x^3y^3z^3";
+    std::string str = "-x^1y^4z^2+x^1y^4z^2";
     p.createMomomVector(str);
     p.vectorOutput();
     p.output();

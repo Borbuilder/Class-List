@@ -10,11 +10,11 @@ private:
 
 public:
 
-	//TPolinom() 
-	//{
-		//Monom HeadMonom;
-		//pHead->value = HeadMonom;
-	//}
+	TPolinom() 
+	{
+		Monom HeadMonom;
+		pHead->value = HeadMonom;
+	}
 
 	void createMomomVector(const std::string& str);          //Создание вектора полиномов на основе входящей строки
 
@@ -30,7 +30,7 @@ public:
 			arr_monom[i].outputMonomFields();
 			std::cout << " ";
 		}
-		std::cout << " )";
+		std::cout << ")" << std::endl;
 	}
 };
 
