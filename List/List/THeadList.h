@@ -31,8 +31,8 @@ public:
 	{
 		TNode<T>* tmp = object.pFirst;
 		TNode<T>* current;
-
-		while (tmp != nullptr)
+		//Monom stop(0, -1);
+		while (tmp != pStop)
 		{
 			current = new TNode<T>;
 			current->value = tmp->value;

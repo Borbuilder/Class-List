@@ -2,7 +2,7 @@
 #include<string>
 #include<vector>
 
-void TPolinom::createMomomVector(const std::string& in_str)
+void TPolinom::createMomom(const std::string& in_str)
 {
     std::vector<Monom> cur_vector;
     std::string check = "1234567890xyz+-^";
@@ -98,9 +98,12 @@ void TPolinom::createMomomVector(const std::string& in_str)
     }
 }
 
-void TPolinom::createPolinom()
+void TPolinom::createPolinomOnVector(std::vector<Monom> v)
 {
-    
+    for (int i = 0; i < v.size(); i++)
+    {
+        addMonom(v[i]);
+    }
 }
 
 void TPolinom::addMonom(Monom& _monom)
@@ -129,4 +132,44 @@ void TPolinom::addMonom(Monom& _monom)
             InsCurrent(_monom);
         }
     }
+}
+
+TPolinom TPolinom::operator+(TPolinom _other)
+{
+    TPolinom result;
+    result = _other;
+    this->Reset();
+    result.Reset();
+
+    while (!IsEnd())
+    {
+        if (result.pCur->value > pCur->value)
+        {
+            result.GoNext();
+        }
+        else if (result.pCur->value < pCur->value)
+        {
+            result.InsCurrent(pCur->value);
+            GoNext();
+        }
+        else
+        {
+            if (pCur->value.getIndex() == -1)
+            {
+                break;
+            }
+            result.pCur->value.setCoef(result.pCur->value.getCoef() + pCur->value.getCoef());
+            if (result.pCur->value.getCoef() == 0)
+            {
+                result.DelCurrent();
+                GoNext();
+            }
+            else
+            {
+                result.GoNext();
+                GoNext();
+            }
+        }
+    }
+    return result;
 }

@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="gtest-all.cc" />
     <ClCompile Include="headlist.cpp" />
+    <ClCompile Include="polinom_list .cpp" />
     <ClCompile Include="test_list.cpp" />
     <ClCompile Include="test_main.cpp" />
   </ItemGroup>

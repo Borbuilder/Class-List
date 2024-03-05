@@ -5,10 +5,8 @@
 
 class TPolinom:public THeadList<Monom>
 {
-private:
-	std::vector<Monom> arr_monom;
-
 public:
+    std::vector<Monom> arr_monom;
 
 	TPolinom() 
 	{
@@ -16,11 +14,11 @@ public:
 		pHead->value = HeadMonom;
 	}
 
-	void createMomomVector(const std::string& str);          //Создание вектора полиномов на основе входящей строки
+	void createMomom(const std::string& str);          //Создание вектора полиномов на основе входящей строки
 
-	void createPolinom();
+	void createPolinomOnVector(std::vector<Monom> v);
 
-	void addMonom( Monom& _monom);
+	void addMonom(Monom& _monom);
 
 	void vectorOutput()
 	{   
@@ -32,5 +30,40 @@ public:
 		}
 		std::cout << ")" << std::endl;
 	}
+
+	TPolinom& operator =(TPolinom& q)
+	{
+		DelList();
+		Monom h(0,-1);
+		pHead->value = h;
+		for (q.Reset(); !q.IsEnd(); q.GoNext())
+		{
+			Monom monom = q.pCur->value;
+			InsLast(monom);
+		}
+		return *this;
+	}
+	/*bool operator==(TPolinom other)
+	{
+		if (this->GetLenght() != other.GetLenght())
+		{
+			return false;
+		}
+		else {
+			this->Reset();
+			other.Reset();
+			while (!IsEnd())
+			{
+				if (this->pCur->value != other.pCur->value)
+				{
+					return false;
+				}
+				GoNext();
+			}
+		}
+		return true;
+	}*/
+
+	TPolinom operator+(TPolinom _other);
 };
 

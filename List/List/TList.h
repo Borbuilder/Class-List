@@ -14,7 +14,7 @@ class TList
 {
 
 protected:
-	TNode<T>* pFirst, * pLast, * pStop, * pCur, * pPrev;
+	TNode<T>* pFirst, * pLast, * pStop, * pCur, * pPrev,*pHead;
 	int pos, len;
 	int SetPos_key = 0; //»спользуетс€ в InsFirst(если не устанавливали pos заранее, то pCur = pFirst)
 
@@ -44,6 +44,7 @@ public:
 	T Back();
 	
 	TList<T>& operator=(const TList<T>& object);
+	//virtual bool operator==(TList<T> object);
 	void output();
 };
 
@@ -51,10 +52,12 @@ public:
 template<class T>
 inline TList<T>::TList()
 {
-	pStop = nullptr;
+	pHead = new TNode<T>;
+	pHead->pNext = pHead;
+	pStop = pHead;
 	pFirst = pStop;
 	pLast = pStop;
-	//pLast->pNext = pStop;
+	pLast->pNext = pStop;
 	pCur = pStop;
 	pPrev = pStop;
 	//pPrev->pNext = pCur;
@@ -68,7 +71,7 @@ inline TList<T>::TList(const TList<T>& object)
 	TNode<T>* tmp = object.pFirst;
 	TNode<T>* current;
 
-	while (tmp != nullptr)
+	while (tmp != pStop)
 	{
 		current = new TNode<T>;
 		current->value = tmp->value;
@@ -323,6 +326,28 @@ inline TList<T>& TList<T>::operator=(const TList<T>& object)
 	len = object.len;
 	return *this;
 }
+
+/*template<class T>
+inline bool TList<T>::operator==(TList<T> object)
+{
+	if (this->len != object.len)
+	{
+		return false;
+	}
+	else {
+		this->Reset();
+		object.Reset();
+		while (!IsEnd())
+		{
+			if (this->pCur->value != object.pCur->value)
+			{
+				return false;
+			}
+			GoNext();
+		}
+	}
+	return true;
+}*/
 
 template<class T>
 inline void TList<T>::output()

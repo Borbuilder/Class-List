@@ -2,16 +2,36 @@
 #include "TList.h"
 #include "TPolinom.h"
 #include<vector>
+#include "Monom.h"
 
 int main()
 {   
-    TPolinom p;
-    std::string str = "-x^1y^4z^2+x^1y^4z^2";
-    p.createMomomVector(str);
-    p.vectorOutput();
-    p.output();
+    std::vector<Monom> v;
+    Monom m(1, 111);
+    v.push_back(m);
+    Monom m1(2, 112);
+    v.push_back(m1);
+    Monom m2(3, 113);
+    v.push_back(m2);
+   /* for (int i = 0; i < v.size(); i++)
+    {
+        std::cout << v[i];
+    }*/
     
-    /* 
+    
+    TPolinom p;
+    //std::string str = "-x^1y^4z^2+x^1y^4z^2";
+    p.createPolinomOnVector(v);
+    p.output();
+
+    TPolinom p1,p2; 
+    p1 = p;
+    //p.vectorOutput();
+    p1.output();
+    p2 = p1 + p;
+    p2.output();
+    /*
+     
     int rows = 2;
     int cols = 2;
     std::vector<int> v;

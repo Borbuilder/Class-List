@@ -17,6 +17,12 @@ public:
 		index = 0;
 	}
 
+	Monom(const int& _coef,const int& _index)
+	{
+		coef = _coef;
+		index = _index;
+	}
+
 	Monom(const Monom& other)
 	{
 		coef = other.coef;
