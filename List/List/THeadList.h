@@ -4,10 +4,11 @@
 template <class T>
 class THeadList :public TList<T>
 {
-protected:
-	TNode<T>* pHead;
+//protected:
+	//TNode<T>* pHead;
 
 public:
+	
 	THeadList()
 	{
 		pHead = new TNode<T>;
@@ -31,8 +32,8 @@ public:
 	{
 		TNode<T>* tmp = object.pFirst;
 		TNode<T>* current;
-		//Monom stop(0, -1);
-		while (tmp != pStop)
+		Monom stop(0, -1);
+		while (tmp->value != stop)
 		{
 			current = new TNode<T>;
 			current->value = tmp->value;
@@ -50,6 +51,7 @@ public:
 		}
 		pHead = new TNode<T>;
 		pHead->pNext = pFirst;
+		pLast->pNext = pHead;
 		pCur = pFirst;
 		pos = 0;
 		pPrev = pStop;

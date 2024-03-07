@@ -13,8 +13,8 @@ public:
 
 	Monom() 
 	{
-		coef = -1;
-		index = 0;
+		coef = 0;
+		index = -1;
 	}
 
 	Monom(const int& _coef,const int& _index)
@@ -54,7 +54,7 @@ public:
 	
 	bool operator<(const Monom& other)
 	{
-		if (index < other.index)
+		if (index < other.index )
 		{
 			return true;
 		}
@@ -62,7 +62,7 @@ public:
 		{
 			if (index == other.index)
 			{
-				return coef < other.coef;
+				return std::abs(coef) < (other.coef);
 			}
 			else
 			{
@@ -73,7 +73,13 @@ public:
 
 	bool operator>(const Monom& other)
 	{
-		return !(*this < other);
+		if (*this < other || *this == other)
+		{
+			return false;
+		}
+		else {
+			return true;
+		}
 	}
 
 	void outputMonomFields()

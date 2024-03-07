@@ -164,5 +164,5 @@ TEST(TList, can_delete_last_by_DelCurr)
     list.InsLast(3);
     list.SetPos(2);
     ASSERT_NO_THROW(list.DelCurrent());
-    EXPECT_EQ(nullptr, list.GetpCur());
+    EXPECT_EQ(list.GetpStop(), list.GetpCur());
 }

@@ -134,7 +134,7 @@ void TPolinom::addMonom(Monom& _monom)
     }
 }
 
-TPolinom TPolinom::operator+(TPolinom _other)
+TPolinom TPolinom::operator+( TPolinom& _other)
 {
     TPolinom result;
     result = _other;

@@ -11,8 +11,13 @@ int main()
     v.push_back(m);
     Monom m1(2, 112);
     v.push_back(m1);
-    Monom m2(3, 113);
-    v.push_back(m2);
+  
+
+    std::vector<Monom> v1;
+    Monom m3(1, 113);
+    v1.push_back(m3);
+    Monom m4(2, 114);
+    v1.push_back(m4);
    /* for (int i = 0; i < v.size(); i++)
     {
         std::cout << v[i];
@@ -25,11 +30,12 @@ int main()
     p.output();
 
     TPolinom p1,p2; 
-    p1 = p;
+    p1.createPolinomOnVector(v1);
     //p.vectorOutput();
     p1.output();
-    p2 = p1 + p;
+    p2 = (p1 + p);
     p2.output();
+    //p2.output();
     /*
      
     int rows = 2;

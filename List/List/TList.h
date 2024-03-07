@@ -31,8 +31,9 @@ public:
 	virtual void DelList();
 	void SetPos(const int& _pos);
 	T GetCurrentValue() { return pCur->value; };
-	T GetLenght() { return len; }
-	TNode<T>* GetpCur() { return pCur; }
+	int GetLenght() { return len; };
+	TNode<T>* GetpCur() { return pCur; };
+	TNode<T>* GetpStop() { return pStop; };
 	T GetPos() { return pos; }
 
 	void Reset();
@@ -215,10 +216,14 @@ template<class T>
 inline void TList<T>::DelList()
 {
 	TNode<T>* tmp = pFirst;
-	while (pFirst != pStop)
+	while (pFirst->value != pHead->value)
 	{
 		tmp = pFirst;
 		pFirst = pFirst->pNext;
+		if (pFirst->value == pHead->value)
+		{
+			pFirst->pNext = pHead;
+		}
 		delete tmp;
 	}
 	len = 0;
@@ -272,7 +277,7 @@ inline void TList<T>::GoNext()
 template<class T>
 inline bool TList<T>::IsEnd()
 {
-	return (pCur==pStop);
+	return (pCur->value==pStop->value);
 }
 
 template<class T>

@@ -31,9 +31,17 @@ public:
 		std::cout << ")" << std::endl;
 	}
 
-	TPolinom& operator =(TPolinom& q)
+	TPolinom& operator =( TPolinom& q)
 	{
-		DelList();
+		//if (q.pLast->pNext != pStop)
+		//{
+			//q.pLast->pNext = pStop;
+		//}
+		if (this->GetLenght() != 0)
+		{
+			DelList();
+		}
+		
 		Monom h(0,-1);
 		pHead->value = h;
 		for (q.Reset(); !q.IsEnd(); q.GoNext())
@@ -64,6 +72,6 @@ public:
 		return true;
 	}*/
 
-	TPolinom operator+(TPolinom _other);
+	TPolinom operator+( TPolinom& _other);
 };
 
