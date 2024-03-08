@@ -136,6 +136,10 @@ void TPolinom::addMonom(Monom& _monom)
 
 TPolinom TPolinom::operator+( TPolinom& _other)
 {
+    if (_other.empty())
+    {
+        return *this;
+    }
     TPolinom result;
     result = _other;
     this->Reset();
@@ -170,6 +174,109 @@ TPolinom TPolinom::operator+( TPolinom& _other)
                 GoNext();
             }
         }
+    }
+    return result;
+}
+
+TPolinom TPolinom::operator+=(TPolinom& _other)
+{
+    if (_other.empty())
+    {
+        return *this;
+    }
+    this->Reset();
+    _other.Reset();
+
+    while (!IsEnd())
+    {
+        if (_other.pCur->value > pCur->value)
+        {
+            InsCurrent(_other.pCur->value);
+            _other.GoNext();
+        }
+        else if (_other.pCur->value < pCur->value)
+        {
+            GoNext();
+        }
+        else
+        {
+            if (pCur->value.getIndex() == -1)
+            {
+                break;
+            }
+            pCur->value.setCoef(_other.pCur->value.getCoef() + pCur->value.getCoef());
+            if (pCur->value.getCoef() == 0)
+            {
+                DelCurrent();
+                _other.GoNext();
+            }
+            else
+            {
+                _other.GoNext();
+                GoNext();
+            }
+        }
+    }
+    return *this;
+}
+
+TPolinom TPolinom::operator*(const int num)
+{
+    if (num == 0)
+    {
+        this->DelList();
+    }
+    else {
+        for (this->Reset(); !(this->IsEnd()); this->GoNext())
+        {
+            this->pCur->value.setCoef(this->pCur->value.getCoef() * num);
+        }
+    }
+    return *this;
+}
+
+TPolinom TPolinom::operator-(TPolinom& _other)
+{
+    TPolinom result;
+    result = _other * (-1);
+    return (*this + result);
+}
+
+TPolinom TPolinom::operator*(TPolinom& other)
+{
+    TPolinom result;
+ 
+    for (this->Reset(); !this->IsEnd(); this->GoNext())
+    {
+        TPolinom this_result;
+
+        int this_coef = this->pCur->value.getCoef();
+        int this_deg_x = this->pCur->value.getIndex() / 100;
+        int this_deg_y = (this->pCur->value.getIndex() / 10) % 10;
+        int this_deg_z = this->pCur->value.getIndex() % 10;
+
+        for (other.Reset(); !other.IsEnd(); other.GoNext())
+        {
+            TPolinom other_result;
+            int other_coef = other.pCur->value.getCoef();
+            int other_deg_x = other.pCur->value.getIndex() / 100;
+            int other_deg_y = (other.pCur->value.getIndex() / 10) % 10;
+            int other_deg_z = other.pCur->value.getIndex() % 10;
+
+            if (this_deg_x + other_deg_x > 9 || this_deg_y + other_deg_y > 9 || this_deg_z + other_deg_z>9)
+            {
+                throw "Deg is bigger than 9";
+            }
+            Monom cur_monom;
+            cur_monom.setCoef(this_coef * other_coef);
+            int cur_monom_index = (this_deg_x + other_deg_x) * 100 + (this_deg_y + other_deg_y) * 10 + (this_deg_z + other_deg_z);
+            cur_monom.setIndex(cur_monom_index);
+            other_result.addMonom(cur_monom);
+
+            this_result = this_result + other_result;
+            other_result.DelList();
+        }
+        result = result + this_result;
     }
     return result;
 }

@@ -233,7 +233,7 @@ inline void TList<T>::DelList()
 template<class T>
 inline bool TList<T>::empty()
 {
-	return (pFirst == pStop);
+	return (pFirst == pHead);
 }
 
 template<class T>

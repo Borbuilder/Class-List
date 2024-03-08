@@ -103,6 +103,3 @@ public:
 		pHead->pNext = pFirst;
 	}
 };
-
-
-

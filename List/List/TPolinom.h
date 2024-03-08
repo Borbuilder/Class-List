@@ -33,10 +33,6 @@ public:
 
 	TPolinom& operator =( TPolinom& q)
 	{
-		//if (q.pLast->pNext != pStop)
-		//{
-			//q.pLast->pNext = pStop;
-		//}
 		if (this->GetLenght() != 0)
 		{
 			DelList();
@@ -73,5 +69,13 @@ public:
 	}*/
 
 	TPolinom operator+( TPolinom& _other);
+
+	TPolinom operator+=(TPolinom& _other);
+
+	TPolinom operator*(const int num);
+
+	TPolinom operator-(TPolinom& _other);
+
+	TPolinom operator*(TPolinom& other);
 };
 
