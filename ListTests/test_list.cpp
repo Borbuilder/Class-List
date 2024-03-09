@@ -1,6 +1,8 @@
 #include "../List/List/TList.h"
 #include "gtest.h"
 #include "../List/List/THeadList.h"
+#include "../List/List/TPolinom.h"
+#include "../List/List/Monom.h"
 
 TEST(TList, can_create_list)
 {

@@ -1,6 +1,7 @@
 #pragma once
 #include<iostream>
 #include<cmath>
+#include<string>
 
 class Monom
 {
@@ -94,6 +95,25 @@ public:
 	int getCoef() { return coef; }
 
 	void setCoef(const int& _coef) { coef = _coef; }
+
+	std::string monomToString() 
+	{
+		std::string str;
+		std::string str_coef;
+		if (coef == 1)
+		{
+			str_coef = "";
+		}
+		else {
+			str_coef=std::to_string(coef);
+		}
+		std::string str_deg_x = std::to_string(index/100);
+		std::string str_deg_y = std::to_string((index / 10)%10);
+		std::string str_deg_z = std::to_string(index % 10);
+
+		str = str_coef + "x^" + str_deg_x + "y^" + str_deg_y + "z^" + str_deg_z;
+		return str;
+	}
 
 	friend std::istream& operator>>(std::istream& cin, Monom& monom) 
 	{

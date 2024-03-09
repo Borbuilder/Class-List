@@ -2,7 +2,7 @@
 #include<string>
 #include<vector>
 
-void TPolinom::createMomom(const std::string& in_str)
+void TPolinom::createPolinom(const std::string& in_str)
 {
     std::vector<Monom> cur_vector;
     std::string check = "1234567890xyz+-^";
@@ -98,13 +98,13 @@ void TPolinom::createMomom(const std::string& in_str)
     }
 }
 
-void TPolinom::createPolinomOnVector(std::vector<Monom> v)
+/*void TPolinom::createPolinomOnVector(std::vector<Monom>& v)
 {
     for (int i = 0; i < v.size(); i++)
     {
         addMonom(v[i]);
     }
-}
+}*/
 
 void TPolinom::addMonom(Monom& _monom)
 {

@@ -14,9 +14,15 @@ public:
 		pHead->value = HeadMonom;
 	}
 
-	void createMomom(const std::string& str);          //Создание вектора полиномов на основе входящей строки
+	void createPolinom(const std::string& str);          //Создание вектора полиномов на основе входящей строки
 
-	void createPolinomOnVector(std::vector<Monom> v);
+	void createPolinomOnVector(std::vector<Monom>& v)
+	{
+		for (int i = 0; i < v.size(); i++)
+		{
+			addMonom(v[i]);
+		}
+	}
 
 	void addMonom(Monom& _monom);
 
@@ -47,7 +53,8 @@ public:
 		}
 		return *this;
 	}
-	/*bool operator==(TPolinom other)
+
+	bool operator==(TPolinom& other)
 	{
 		if (this->GetLenght() != other.GetLenght())
 		{
@@ -66,7 +73,7 @@ public:
 			}
 		}
 		return true;
-	}*/
+	}
 
 	TPolinom operator+( TPolinom& _other);
 
@@ -77,5 +84,15 @@ public:
 	TPolinom operator-(TPolinom& _other);
 
 	TPolinom operator*(TPolinom& other);
+
+	std::string polinomToString()
+	{
+		std::string p_str;
+		for (Reset(); !IsEnd(); GoNext())
+		{
+			p_str += pCur->value.monomToString();
+		}
+		return p_str;
+	}
 };
 
