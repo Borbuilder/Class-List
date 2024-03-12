@@ -4,7 +4,7 @@
 #include "../List/List/TPolinom.h"
 #include "../List/List/Monom.h"
 #include<msclr\marshal_cppstd.h>
-#include<exception>
+//#include<exception>
 
 std::vector<TPolinom> p_vector;
 //Ключи, показывающие, свободна ли строка таблицы для записи
@@ -56,8 +56,8 @@ namespace Animation {
 	protected:
 
 	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
+
+
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ textBox3;
@@ -95,8 +95,6 @@ namespace Animation {
 		{
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
@@ -135,40 +133,13 @@ namespace Animation {
 			this->textBox2->TabIndex = 1;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox2_TextChanged);
 			// 
-			// button1
-			// 
-			this->button1->BackColor = System::Drawing::Color::PaleTurquoise;
-			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->button1->Location = System::Drawing::Point(467, 12);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(107, 20);
-			this->button1->TabIndex = 2;
-			this->button1->Text = L"Добавить";
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
-			// 
-			// button2
-			// 
-			this->button2->BackColor = System::Drawing::Color::PaleTurquoise;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->button2->Location = System::Drawing::Point(467, 85);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(107, 20);
-			this->button2->TabIndex = 3;
-			this->button2->Text = L"Добавить";
-			this->button2->UseVisualStyleBackColor = false;
-			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
-			// 
 			// button3
 			// 
 			this->button3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button3->Location = System::Drawing::Point(467, 48);
+			this->button3->Location = System::Drawing::Point(215, 47);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(107, 20);
+			this->button3->Size = System::Drawing::Size(107, 21);
 			this->button3->TabIndex = 4;
 			this->button3->Text = L"Вычислить";
 			this->button3->UseVisualStyleBackColor = true;
@@ -180,9 +151,9 @@ namespace Animation {
 			this->label1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label1->Location = System::Drawing::Point(12, 48);
+			this->label1->Location = System::Drawing::Point(12, 47);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(100, 20);
+			this->label1->Size = System::Drawing::Size(100, 21);
 			this->label1->TabIndex = 5;
 			this->label1->Text = L"Действие:";
 			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
@@ -217,7 +188,6 @@ namespace Animation {
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(432, 20);
 			this->label3->TabIndex = 8;
-			this->label3->Text = L"label3";
 			this->label3->Click += gcnew System::EventHandler(this, &MyForm::label3_Click);
 			// 
 			// label4
@@ -375,8 +345,6 @@ namespace Animation {
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
 			this->Name = L"MyForm";
@@ -490,16 +458,20 @@ namespace Animation {
 	}*/
     private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 	   //Вычислить
+		try
+		{
+
 		
 		std::string input_str1;
 		input_str1 = msclr::interop::marshal_as<std::string>(textBox1->Text);
 		std::string input_str2;
 		input_str2 = msclr::interop::marshal_as<std::string>(textBox2->Text);
+		int table_number1; int table_number2;
 	
 		if (
-			(input_str1 != "1" || input_str1 != "2" || input_str1 != "3" || input_str1 != "4" || input_str1 != "5" || input_str1 != "6")
+			(input_str1 != "1" && input_str1 != "2" && input_str1 != "3" && input_str1 != "4" && input_str1 != "5" && input_str1 != "6")
 			&&
-			(input_str2 != "1" || input_str2 != "2" || input_str2 != "3" || input_str2 != "4" || input_str2 != "5" || input_str2 != "6")
+			(input_str2 != "1" && input_str2 != "2" && input_str2 != "3" && input_str2 != "4" && input_str2 != "5" && input_str2 != "6")
 			)
 		{
 			TPolinom polinom1;
@@ -510,73 +482,139 @@ namespace Animation {
 			polinom2.createPolinom(input_str2);
 			p_vector.push_back(polinom2);
 			addToTable(input_str2);
-			first_input_flag = 1;
+			
 		}
 		else {
-			std::string op;
-			op = msclr::interop::marshal_as<std::string>(textBox3->Text);
-			char operation = op[0];
-			if (operation == '+' || operation == '-' || operation == '*')
+			if (
+				(input_str1 == "1" || input_str1 == "2" || input_str1 == "3" || input_str1 == "4" || input_str1 == "5" || input_str1 == "6")
+				&&
+				(input_str2 == "1" || input_str2 == "2" || input_str2 == "3" || input_str2 == "4" || input_str2 == "5" || input_str2 == "6")
+				)
 			{
-				int table_number1; int table_number2;
 				table_number1 = getTableNumber(input_str1);
 				table_number2 = getTableNumber(input_str2);
-
-				switch (operation)
-				{
-				case '+':
-					if (first_input_flag == 0)
-					{
-						TPolinom res;
-						res = p_vector[p_vector.size() - 1] + p_vector[p_vector.size() - 2];
-						p_vector.push_back(res);
-						addToTable(res.polinomToString());
-					}
-					else {
-						TPolinom res;
-						res = p_vector[table_number1 - 1] + p_vector[table_number2 - 1];
-						p_vector.push_back(res);
-						addToTable(res.polinomToString());
-					}
-				case '-':
-					if (first_input_flag == 0)
-					{
-						TPolinom res;
-						res = p_vector[p_vector.size() - 1] - p_vector[p_vector.size() - 2];
-						p_vector.push_back(res);
-						addToTable(res.polinomToString());
-					}
-					else {
-						TPolinom res;
-						res = p_vector[table_number1 - 1] - p_vector[table_number2 - 1];
-						p_vector.push_back(res);
-						addToTable(res.polinomToString());
-					}
-				case '*':
-					if (first_input_flag == 0)
-					{
-						TPolinom res;
-						res = p_vector[p_vector.size() - 1] * p_vector[p_vector.size() - 2];
-						p_vector.push_back(res);
-						addToTable(res.polinomToString());
-					}
-					else {
-						TPolinom res;
-						res = p_vector[table_number1 - 1] * p_vector[table_number2 - 1];
-						p_vector.push_back(res);
-						addToTable(res.polinomToString());
-					}
-				default:
-					break;
-				}
-
-				//Вывод текущего результата
-				String^ strange_str = gcnew String(p_vector[p_vector.size() - 1].polinomToString().c_str());
-				label3->Text = strange_str;
 			}
 			else {
 				throw std::exception();
 			}
+		}
+
+		std::string op;
+		op = msclr::interop::marshal_as<std::string>(textBox3->Text);
+		char operation = op[0];
+		if (operation == '+' || operation == '-' || operation == '*')
+		{
+			if (operation == '+')
+			{
+				if (first_input_flag == 0)
+				{
+					TPolinom res;
+					res = p_vector[0] + p_vector[1];
+					p_vector.push_back(res);
+					if (!res.empty())
+					{
+						addToTable(res.polinomToString());
+					}
+					else {
+						addToTable("0");
+					}
+					first_input_flag = 1;
+				}
+				else {
+					TPolinom res;
+					res = p_vector[table_number1 - 1] + p_vector[table_number2 - 1];
+					p_vector.push_back(res);
+					if (!res.empty())
+					{
+						addToTable(res.polinomToString());
+					}
+					else {
+						addToTable("0");
+					}
+				}
+			}
+			if (operation == '-')
+			{
+				if (first_input_flag == 0)
+				{
+					TPolinom res;
+					res = p_vector[0] - p_vector[1];
+					p_vector.push_back(res);
+					if (!res.empty())
+					{
+						addToTable(res.polinomToString());
+					}
+					else {
+						addToTable("0");
+					}
+					first_input_flag = 1;
+				}
+				else {
+					TPolinom res,v1,v2;
+					v1 = p_vector[table_number1 - 1];
+					v2 = p_vector[table_number2 - 1];
+					res = v1 - v2;
+					p_vector.push_back(res);
+					if (!res.empty())
+					{
+						addToTable(res.polinomToString());
+					}
+					else {
+						addToTable("0");
+					}
+				}
+			}
+			if (operation == '*')
+			{
+				if (first_input_flag == 0)
+				{
+					TPolinom res;
+					res = p_vector[0] * p_vector[1];
+					p_vector.push_back(res);
+					if (!res.empty())
+					{
+						addToTable(res.polinomToString());
+					}
+					else {
+						addToTable("0");
+					}
+					first_input_flag = 1;
+				}
+				else {
+					TPolinom res;
+					res = p_vector[table_number1 - 1] * p_vector[table_number2 - 1];
+					p_vector.push_back(res);
+					if (!res.empty())
+					{
+						addToTable(res.polinomToString());
+					}
+					else {
+						addToTable("0");
+					}
+				}
+			}
+
+
+			//Вывод текущего результата
+			TPolinom rpol;
+			rpol = p_vector[p_vector.size() - 1];
+			if (!rpol.empty())
+			{
+				String^ strange_str = gcnew String(rpol.polinomToString().c_str());
+				label3->Text = strange_str;
+			}
+			else {
+				label3->Text = "0";
+			}
+		}
+		else {
+			throw std::exception();
+		}
+
+		}
+		catch (const std::exception& ex)
+		{
+			label3->Text = "Error";
 		}
     }
     private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -639,7 +677,7 @@ namespace Animation {
 				   label5_flag = 1;
 				   label12->Text = "2";
 			   }
-			   if (label6_flag == 0)
+			   else if (label6_flag == 0)
 			   {
 				   label6->Text = strange_str;
 				   label6_flag = 1;

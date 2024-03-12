@@ -92,7 +92,7 @@ void TPolinom::createPolinom(const std::string& in_str)
 
         }
         else {
-            std::cout << in_str[i];
+            //std::cout << in_str[i];
             throw std::exception();
         }
     }
@@ -236,10 +236,13 @@ TPolinom TPolinom::operator*(const int num)
 }
 
 TPolinom TPolinom::operator-(TPolinom& _other)
-{
+{   
+    TPolinom cur=*this;
     TPolinom result;
     result = _other * (-1);
-    return (*this + result);
+    
+
+    return (cur + result);
 }
 
 TPolinom TPolinom::operator*(TPolinom& other)

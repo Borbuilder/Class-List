@@ -34,7 +34,7 @@ public:
 	int GetLenght() { return len; };
 	TNode<T>* GetpCur() { return pCur; };
 	TNode<T>* GetpStop() { return pStop; };
-	T GetPos() { return pos; }
+	int GetPos() { return pos; }
 
 	void Reset();
 	void GoNext();

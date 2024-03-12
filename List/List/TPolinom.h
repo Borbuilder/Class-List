@@ -90,6 +90,10 @@ public:
 		std::string p_str;
 		for (Reset(); !IsEnd(); GoNext())
 		{
+			if ( (this->GetPos()!=0) && (pCur->value.getCoef() > 0))
+			{
+				p_str += "+";
+			}
 			p_str += pCur->value.monomToString();
 		}
 		return p_str;

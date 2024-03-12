@@ -7,16 +7,20 @@
 
 int main()
 {   
-    
+   
     TPolinom p1;
     TPolinom p2;
     TPolinom p3;
-    p1.createPolinom("x^2y^2z^2+x^3y^3z^3");
-    p2.createPolinom("x^2y^2z^2+x^4y^4z^4");
+    p1.createPolinom("x^2y^2z^2");
+    p2.createPolinom("x^2y^2z^2");
    // p3.createPolinom("x^4y^4z^4+x^3y^3z^3+2x^2y^2z^2");
-    p3 = p2 + p1;
+    p3 = p1 - p2;
     std::string str=p3.polinomToString();
     std::cout << str;
+     /*std::vector<int> v;
+    v.push_back(1);
+    v.push_back(2);
+    std::cout << v[v.size() - 1];*/
 
     
 }
