@@ -13,7 +13,11 @@ int label5_flag = 0; //2 строка
 int label6_flag = 0; //3 строка
 int label7_flag = 0; //4 строка
 int label8_flag = 0; //5 строка
-int label14_flag = 0;
+int label14_flag = 0;//6 строка
+int label16_flag = 0;//7 строка
+int label18_flag = 0;//8 строка
+int label20_flag = 0;//9строка
+int label22_flag = 0;//10 строка
 
 int first_input_flag = 0;
 int button2_flag = 0;
@@ -75,6 +79,14 @@ namespace Animation {
 	private: System::Windows::Forms::Label^ label13;
 	private: System::Windows::Forms::Label^ label14;
 	private: System::Windows::Forms::Label^ label15;
+	private: System::Windows::Forms::Label^ label16;
+	private: System::Windows::Forms::Label^ label17;
+	private: System::Windows::Forms::Label^ label18;
+	private: System::Windows::Forms::Label^ label19;
+	private: System::Windows::Forms::Label^ label20;
+	private: System::Windows::Forms::Label^ label21;
+	private: System::Windows::Forms::Label^ label22;
+	private: System::Windows::Forms::Label^ label23;
 
 
 	protected:
@@ -112,6 +124,14 @@ namespace Animation {
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
+			this->label16 = (gcnew System::Windows::Forms::Label());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->label19 = (gcnew System::Windows::Forms::Label());
+			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->label21 = (gcnew System::Windows::Forms::Label());
+			this->label22 = (gcnew System::Windows::Forms::Label());
+			this->label23 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// textBox1
@@ -198,7 +218,6 @@ namespace Animation {
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(432, 20);
 			this->label4->TabIndex = 9;
-			this->label4->Text = L"label4";
 			this->label4->Click += gcnew System::EventHandler(this, &MyForm::label4_Click);
 			// 
 			// label5
@@ -209,7 +228,6 @@ namespace Animation {
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(432, 20);
 			this->label5->TabIndex = 10;
-			this->label5->Text = L"label5";
 			this->label5->Click += gcnew System::EventHandler(this, &MyForm::label5_Click);
 			// 
 			// label6
@@ -220,7 +238,6 @@ namespace Animation {
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(432, 20);
 			this->label6->TabIndex = 11;
-			this->label6->Text = L"label6";
 			this->label6->Click += gcnew System::EventHandler(this, &MyForm::label6_Click);
 			// 
 			// label7
@@ -231,7 +248,6 @@ namespace Animation {
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(432, 20);
 			this->label7->TabIndex = 12;
-			this->label7->Text = L"label7";
 			this->label7->Click += gcnew System::EventHandler(this, &MyForm::label7_Click);
 			// 
 			// label8
@@ -242,7 +258,6 @@ namespace Animation {
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(432, 20);
 			this->label8->TabIndex = 13;
-			this->label8->Text = L"label8";
 			this->label8->Click += gcnew System::EventHandler(this, &MyForm::label8_Click);
 			// 
 			// label9
@@ -253,7 +268,6 @@ namespace Animation {
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(100, 20);
 			this->label9->TabIndex = 18;
-			this->label9->Text = L"label9";
 			this->label9->Click += gcnew System::EventHandler(this, &MyForm::label9_Click);
 			// 
 			// label10
@@ -264,7 +278,6 @@ namespace Animation {
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(100, 20);
 			this->label10->TabIndex = 17;
-			this->label10->Text = L"label10";
 			this->label10->Click += gcnew System::EventHandler(this, &MyForm::label10_Click);
 			// 
 			// label11
@@ -275,7 +288,6 @@ namespace Animation {
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(100, 20);
 			this->label11->TabIndex = 16;
-			this->label11->Text = L"label11";
 			this->label11->Click += gcnew System::EventHandler(this, &MyForm::label11_Click);
 			// 
 			// label12
@@ -286,7 +298,6 @@ namespace Animation {
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(100, 20);
 			this->label12->TabIndex = 15;
-			this->label12->Text = L"label12";
 			this->label12->Click += gcnew System::EventHandler(this, &MyForm::label12_Click);
 			// 
 			// label13
@@ -297,7 +308,6 @@ namespace Animation {
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(100, 20);
 			this->label13->TabIndex = 14;
-			this->label13->Text = L"label13";
 			this->label13->Click += gcnew System::EventHandler(this, &MyForm::label13_Click);
 			// 
 			// label14
@@ -308,7 +318,6 @@ namespace Animation {
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(432, 20);
 			this->label14->TabIndex = 19;
-			this->label14->Text = L"label14";
 			this->label14->Click += gcnew System::EventHandler(this, &MyForm::label14_Click);
 			// 
 			// label15
@@ -319,15 +328,94 @@ namespace Animation {
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(100, 20);
 			this->label15->TabIndex = 20;
-			this->label15->Text = L"label15";
 			this->label15->Click += gcnew System::EventHandler(this, &MyForm::label15_Click);
+			// 
+			// label16
+			// 
+			this->label16->BackColor = System::Drawing::Color::Snow;
+			this->label16->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label16->Location = System::Drawing::Point(136, 290);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(432, 20);
+			this->label16->TabIndex = 21;
+			// 
+			// label17
+			// 
+			this->label17->BackColor = System::Drawing::Color::Snow;
+			this->label17->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label17->Location = System::Drawing::Point(12, 290);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(100, 20);
+			this->label17->TabIndex = 22;
+			// 
+			// label18
+			// 
+			this->label18->BackColor = System::Drawing::Color::Snow;
+			this->label18->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label18->Location = System::Drawing::Point(136, 310);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(432, 20);
+			this->label18->TabIndex = 23;
+			// 
+			// label19
+			// 
+			this->label19->BackColor = System::Drawing::Color::Snow;
+			this->label19->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label19->Location = System::Drawing::Point(12, 310);
+			this->label19->Name = L"label19";
+			this->label19->Size = System::Drawing::Size(100, 20);
+			this->label19->TabIndex = 24;
+			// 
+			// label20
+			// 
+			this->label20->BackColor = System::Drawing::Color::Snow;
+			this->label20->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label20->Location = System::Drawing::Point(136, 330);
+			this->label20->Name = L"label20";
+			this->label20->Size = System::Drawing::Size(432, 20);
+			this->label20->TabIndex = 25;
+			// 
+			// label21
+			// 
+			this->label21->BackColor = System::Drawing::Color::Snow;
+			this->label21->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label21->Location = System::Drawing::Point(12, 330);
+			this->label21->Name = L"label21";
+			this->label21->Size = System::Drawing::Size(100, 20);
+			this->label21->TabIndex = 26;
+			// 
+			// label22
+			// 
+			this->label22->BackColor = System::Drawing::Color::Snow;
+			this->label22->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label22->Location = System::Drawing::Point(136, 350);
+			this->label22->Name = L"label22";
+			this->label22->Size = System::Drawing::Size(432, 20);
+			this->label22->TabIndex = 27;
+			// 
+			// label23
+			// 
+			this->label23->BackColor = System::Drawing::Color::Snow;
+			this->label23->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->label23->Location = System::Drawing::Point(12, 350);
+			this->label23->Name = L"label23";
+			this->label23->Size = System::Drawing::Size(100, 20);
+			this->label23->TabIndex = 28;
 			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Linen;
-			this->ClientSize = System::Drawing::Size(598, 549);
+			this->ClientSize = System::Drawing::Size(598, 397);
+			this->Controls->Add(this->label23);
+			this->Controls->Add(this->label22);
+			this->Controls->Add(this->label21);
+			this->Controls->Add(this->label20);
+			this->Controls->Add(this->label19);
+			this->Controls->Add(this->label18);
+			this->Controls->Add(this->label17);
+			this->Controls->Add(this->label16);
 			this->Controls->Add(this->label15);
 			this->Controls->Add(this->label14);
 			this->Controls->Add(this->label9);
@@ -461,155 +549,183 @@ namespace Animation {
 		try
 		{
 
-		
-		std::string input_str1;
-		input_str1 = msclr::interop::marshal_as<std::string>(textBox1->Text);
-		std::string input_str2;
-		input_str2 = msclr::interop::marshal_as<std::string>(textBox2->Text);
-		int table_number1; int table_number2;
-	
-		if (
-			(input_str1 != "1" && input_str1 != "2" && input_str1 != "3" && input_str1 != "4" && input_str1 != "5" && input_str1 != "6")
-			&&
-			(input_str2 != "1" && input_str2 != "2" && input_str2 != "3" && input_str2 != "4" && input_str2 != "5" && input_str2 != "6")
-			)
-		{
-			TPolinom polinom1;
-			polinom1.createPolinom(input_str1);
-			p_vector.push_back(polinom1);
-			addToTable(input_str1);
-			TPolinom polinom2;
-			polinom2.createPolinom(input_str2);
-			p_vector.push_back(polinom2);
-			addToTable(input_str2);
-			
-		}
-		else {
+			std::string input_str1;
+			input_str1 = msclr::interop::marshal_as<std::string>(textBox1->Text);
+			std::string input_str2;
+			input_str2 = msclr::interop::marshal_as<std::string>(textBox2->Text);
+			int table_number1; int table_number2;
+			int constanta, const_flag=0;
+
+			if (input_str2[0] == '(' && input_str2[input_str2.size() - 1] == ')')
+			{
+				std::string const_str = input_str2.substr(1, input_str2.size() - 2);
+				constanta = std::stoi(const_str);
+				const_flag = 1;
+			}
 			if (
-				(input_str1 == "1" || input_str1 == "2" || input_str1 == "3" || input_str1 == "4" || input_str1 == "5" || input_str1 == "6")
+				(input_str1 != "1" && input_str1 != "2" && input_str1 != "3" && input_str1 != "4" && input_str1 != "5" && input_str1 != "6" && input_str1 != "7" && input_str1 != "8" && input_str1 != "9" && input_str1 !="10")
 				&&
-				(input_str2 == "1" || input_str2 == "2" || input_str2 == "3" || input_str2 == "4" || input_str2 == "5" || input_str2 == "6")
+				(input_str2 != "1" && input_str2 != "2" && input_str2 != "3" && input_str2 != "4" && input_str2 != "5" && input_str2 != "6" && input_str1 != "7" && input_str1 != "8" && input_str1 != "9" && input_str1 != "10")
 				)
 			{
-				table_number1 = getTableNumber(input_str1);
-				table_number2 = getTableNumber(input_str2);
+				TPolinom polinom1;
+				polinom1.createPolinom(input_str1);
+				p_vector.push_back(polinom1);
+				addToTable(input_str1);
+		
+				if (input_str2[0] != '(' && input_str2[input_str2.size() - 1] != ')')
+				{   
+					TPolinom polinom2;
+					polinom2.createPolinom(input_str2);
+					p_vector.push_back(polinom2);
+					addToTable(input_str2);
+				}
+
+			}
+			else {
+				if (
+					(input_str1 == "1" || input_str1 == "2" || input_str1 == "3" || input_str1 == "4" || input_str1 == "5" || input_str1 == "6" || input_str1 == "7" || input_str1 == "8" || input_str1 == "9" || input_str1 == "10")
+					&&
+					(input_str2 == "1" || input_str2 == "2" || input_str2 == "3" || input_str2 == "4" || input_str2 == "5" || input_str2 == "6" || input_str1 == "7" || input_str1 == "8" || input_str1 == "9" || input_str1 == "10" || (input_str2[0] == '(' && input_str2[input_str2.size() - 1] == ')'))
+					)
+				{
+					table_number1 = getTableNumber(input_str1);
+					if (input_str2[0] != '(' && input_str2[input_str2.size() - 1] != ')')
+					{
+						table_number2 = getTableNumber(input_str2);
+					}
+				}
+				else {
+					throw std::exception();
+				}
+			}
+
+			std::string op;
+			op = msclr::interop::marshal_as<std::string>(textBox3->Text);
+			char operation = op[0];
+			if (operation == '+' || operation == '-' || operation == '*')
+			{
+				if (operation == '+')
+				{
+					if (first_input_flag == 0)
+					{
+						TPolinom res;
+						res = p_vector[0] + p_vector[1];
+						p_vector.push_back(res);
+						if (!res.empty())
+						{
+							addToTable(res.polinomToString());
+						}
+						else {
+							addToTable("0");
+						}
+						first_input_flag = 1;
+					}
+					else {
+						TPolinom res;
+						res = p_vector[table_number1 - 1] + p_vector[table_number2 - 1];
+						p_vector.push_back(res);
+						if (!res.empty())
+						{
+							addToTable(res.polinomToString());
+						}
+						else {
+							addToTable("0");
+						}
+					}
+				}
+				if (operation == '-')
+				{
+					if (first_input_flag == 0)
+					{
+						TPolinom res;
+						res = p_vector[0] - p_vector[1];
+						p_vector.push_back(res);
+						if (!res.empty())
+						{
+							addToTable(res.polinomToString());
+						}
+						else {
+							addToTable("0");
+						}
+						first_input_flag = 1;
+					}
+					else {
+						TPolinom res, v1, v2;
+						v1 = p_vector[table_number1 - 1];
+						v2 = p_vector[table_number2 - 1];
+						res = v1 - v2;
+						p_vector.push_back(res);
+						if (!res.empty())
+						{
+							addToTable(res.polinomToString());
+						}
+						else {
+							addToTable("0");
+						}
+					}
+				}
+				if (operation == '*')
+				{
+					    if (first_input_flag == 0)
+						{
+							TPolinom res;
+							if (const_flag == 0)
+							{
+								res = p_vector[0] * p_vector[1];
+							}
+							else {
+								if (constanta != 0)
+								{
+									res = p_vector[0] * constanta;
+								}
+							}
+							p_vector.push_back(res);
+							if (!res.empty())
+							{
+								addToTable(res.polinomToString());
+							}
+							else {
+								addToTable("0");
+							}
+							first_input_flag = 1;
+						}
+						else {
+							TPolinom res;
+							if (const_flag == 0)
+							{
+								res = p_vector[table_number1 - 1] * p_vector[table_number2 - 1];
+							}
+							else {
+								res = p_vector[table_number1 - 1] * constanta;
+							}
+							p_vector.push_back(res);
+							if (!res.empty())
+							{
+								addToTable(res.polinomToString());
+							}
+							else {
+								addToTable("0");
+							}
+						}
+				}
+
+
+				//Вывод текущего результата
+				TPolinom rpol;
+				rpol = p_vector[p_vector.size() - 1];
+				if (!rpol.empty())
+				{
+					String^ strange_str = gcnew String(rpol.polinomToString().c_str());
+					label3->Text = strange_str;
+				}
+				else {
+					label3->Text = "0";
+				}
 			}
 			else {
 				throw std::exception();
 			}
-		}
-
-		std::string op;
-		op = msclr::interop::marshal_as<std::string>(textBox3->Text);
-		char operation = op[0];
-		if (operation == '+' || operation == '-' || operation == '*')
-		{
-			if (operation == '+')
-			{
-				if (first_input_flag == 0)
-				{
-					TPolinom res;
-					res = p_vector[0] + p_vector[1];
-					p_vector.push_back(res);
-					if (!res.empty())
-					{
-						addToTable(res.polinomToString());
-					}
-					else {
-						addToTable("0");
-					}
-					first_input_flag = 1;
-				}
-				else {
-					TPolinom res;
-					res = p_vector[table_number1 - 1] + p_vector[table_number2 - 1];
-					p_vector.push_back(res);
-					if (!res.empty())
-					{
-						addToTable(res.polinomToString());
-					}
-					else {
-						addToTable("0");
-					}
-				}
-			}
-			if (operation == '-')
-			{
-				if (first_input_flag == 0)
-				{
-					TPolinom res;
-					res = p_vector[0] - p_vector[1];
-					p_vector.push_back(res);
-					if (!res.empty())
-					{
-						addToTable(res.polinomToString());
-					}
-					else {
-						addToTable("0");
-					}
-					first_input_flag = 1;
-				}
-				else {
-					TPolinom res,v1,v2;
-					v1 = p_vector[table_number1 - 1];
-					v2 = p_vector[table_number2 - 1];
-					res = v1 - v2;
-					p_vector.push_back(res);
-					if (!res.empty())
-					{
-						addToTable(res.polinomToString());
-					}
-					else {
-						addToTable("0");
-					}
-				}
-			}
-			if (operation == '*')
-			{
-				if (first_input_flag == 0)
-				{
-					TPolinom res;
-					res = p_vector[0] * p_vector[1];
-					p_vector.push_back(res);
-					if (!res.empty())
-					{
-						addToTable(res.polinomToString());
-					}
-					else {
-						addToTable("0");
-					}
-					first_input_flag = 1;
-				}
-				else {
-					TPolinom res;
-					res = p_vector[table_number1 - 1] * p_vector[table_number2 - 1];
-					p_vector.push_back(res);
-					if (!res.empty())
-					{
-						addToTable(res.polinomToString());
-					}
-					else {
-						addToTable("0");
-					}
-				}
-			}
-
-
-			//Вывод текущего результата
-			TPolinom rpol;
-			rpol = p_vector[p_vector.size() - 1];
-			if (!rpol.empty())
-			{
-				String^ strange_str = gcnew String(rpol.polinomToString().c_str());
-				label3->Text = strange_str;
-			}
-			else {
-				label3->Text = "0";
-			}
-		}
-		else {
-			throw std::exception();
-		}
 
 		}
 		catch (const std::exception& ex)
@@ -695,11 +811,35 @@ namespace Animation {
 				   label8_flag = 1;
 				   label9->Text = "5";
 			   }
-			   else
+			   else if (label14_flag == 0)
 			   {
 				   label14->Text = strange_str;
 				   label14_flag = 1;
 				   label15->Text = "6";
+			   }
+			   else if (label16_flag == 0)
+			   {
+				   label16->Text = strange_str;
+				   label16_flag = 1;
+				   label17->Text = "7";
+			   }
+			   else if (label18_flag == 0)
+			   {
+				   label18->Text = strange_str;
+				   label18_flag = 1;
+				   label19->Text = "8";
+			   }
+			   else if (label20_flag == 0)
+			   {
+				   label20->Text = strange_str;
+				   label20_flag = 1;
+				   label21->Text = "9";
+			   }
+			   else 
+			   {
+				   label22->Text = strange_str;
+				   //label22_flag = 1;
+				   label23->Text = "10";
 			   }
 	}
 	int getTableNumber(const std::string& _str)
@@ -711,12 +851,20 @@ namespace Animation {
 		std::string s4 = msclr::interop::marshal_as<std::string>(label10->Text);
 		std::string s5 = msclr::interop::marshal_as<std::string>(label9->Text);
 		std::string s6 = msclr::interop::marshal_as<std::string>(label15->Text);
+		std::string s7 = msclr::interop::marshal_as<std::string>(label17->Text);
+		std::string s8 = msclr::interop::marshal_as<std::string>(label19->Text);
+		std::string s9 = msclr::interop::marshal_as<std::string>(label21->Text);
+		std::string s10 = msclr::interop::marshal_as<std::string>(label23->Text);
 		if (_str == s1) return std::stoi(s1);
 		if (_str == s2) return std::stoi(s2);
 		if (_str == s3) return std::stoi(s3);
 		if (_str == s4) return std::stoi(s4);
 		if (_str == s5) return std::stoi(s5);
 		if (_str == s6) return std::stoi(s6);
+		if (_str == s7) return std::stoi(s7);
+		if (_str == s8) return std::stoi(s8);
+		if (_str == s9) return std::stoi(s9);
+		if (_str == s10) return std::stoi(s10);
 	}
     };
 }

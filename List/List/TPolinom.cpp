@@ -226,17 +226,19 @@ TPolinom TPolinom::operator+=(TPolinom& _other)
 
 TPolinom TPolinom::operator*(const int num)
 {
-    if (num == 0)
-    {
-        this->DelList();
-    }
-    else {
-        for (this->Reset(); !(this->IsEnd()); this->GoNext())
+    TPolinom result;
+    result = *this;
+    //if (num == 0)
+    //{
+      //  this->DelList();
+   // }
+    //else {
+        for (result.Reset(); !(result.IsEnd()); result.GoNext())
         {
-            this->pCur->value.setCoef(this->pCur->value.getCoef() * num);
+            result.pCur->value.setCoef(result.pCur->value.getCoef() * num);
         }
-    }
-    return *this;
+   // }
+    return result;
 }
 
 TPolinom TPolinom::operator-(TPolinom& _other)
