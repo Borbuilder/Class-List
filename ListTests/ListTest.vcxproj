@@ -128,11 +128,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\List\List\TPolinom.cpp" />
     <ClCompile Include="gtest-all.cc" />
     <ClCompile Include="headlist.cpp" />
-    <ClCompile Include="polinom_list .cpp" />
     <ClCompile Include="test_list.cpp" />
     <ClCompile Include="test_main.cpp" />
+    <ClCompile Include="test_monom.cpp" />
+    <ClCompile Include="test_polinom.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gtest.h" />

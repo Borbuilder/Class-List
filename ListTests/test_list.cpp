@@ -8,10 +8,7 @@ TEST(TList, can_create_list)
 {
     ASSERT_NO_THROW(TList<int> list);
 }
-TEST(THeadList, can_create_listttttttttt)
-{
-    ASSERT_NO_THROW(THeadList<int> list_project);
-}
+
 TEST(TList, can_insert_first)
 {
     TList<int> list;

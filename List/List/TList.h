@@ -87,11 +87,12 @@ inline TList<T>::TList(const TList<T>& object)
 			pLast = current;
 		}
 		tmp = tmp->pNext;
-		len++;
+		//len++;
 	}
 	pCur = pFirst;
 	pos = 0;
 	pPrev = pStop;
+	len = object.len;
 }
 
 template<class T>

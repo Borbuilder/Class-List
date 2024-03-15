@@ -55,6 +55,7 @@ public:
 		pCur = pFirst;
 		pos = 0;
 		pPrev = pStop;
+		len = object.len;
 	}
 
 	THeadList<T>& operator=(const THeadList<T>& object)

@@ -24,13 +24,17 @@ void TPolinom::createPolinom(const std::string& in_str)
             if (str[i] == '+' || str[i] == '-')                                    //Создаём моном
             {
                 int stop_position = str.find_first_of("+-", i + 1);
+                if (stop_position == -1)
+                {
+                    stop_position = str.size();
+                }
                 int current_len = stop_position - i - 1;
                 std::string current_str;
                 current_str = str.substr(i + 1, stop_position - 1);
 
                 if ((current_str[0] >= '0') && (current_str[0] <= '9'))
                 {
-                    if (str[i] == '+') { coef = current_str[0]; }
+                    if (str[i] == '+') { coef = static_cast<int>(current_str[0]) - '0'; }
                     else{ coef = (-1)*(static_cast<int>(current_str[0]) - '0'); }
                 }
                 else {

@@ -70,6 +70,7 @@ public:
 					return false;
 				}
 				GoNext();
+				other.GoNext();
 			}
 		}
 		return true;

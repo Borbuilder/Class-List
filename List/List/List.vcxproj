@@ -135,7 +135,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FileForTest.cpp" />
-    <ClCompile Include="new.cpp" />
     <ClCompile Include="TPolinom.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
